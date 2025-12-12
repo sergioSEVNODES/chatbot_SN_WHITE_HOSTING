@@ -8,18 +8,19 @@
         observersConfig: {},
 
         theme: {
+
             /* BOTÓN FLOTANTE */
             button: {
                 backgroundColor: "#800020", 
-                right: 24,
-                bottom: 24,
-                size: 60,
+                right: 100,
+                bottom: 100,
+                size: 65,
                 dragAndDrop: true,
                 iconColor: "#FFFFFF",
-                customIconSrc: "https://www.snwhitehosting.com/wp-content/uploads/2025/08/SN-WHITE-HOSTING-LOGO-e1755733089560.png",
+                customIconSrc: "https://cdn-icons-png.flaticon.com/128/18355/18355222.png",
                 autoWindowOpen: {
                     autoOpen: true,
-                    openDelay: 2,
+                    openDelay: 20,
                     autoOpenOnMobile: false
                 }
             },
@@ -51,10 +52,59 @@
                 backgroundColor: "#FFFFFF"
             },
 
-            /* CSS PERSONALIZADO */
+            /* ================================================
+               CSS PERSONALIZADO (CORRECCIÓN TOTAL DEL ICONO)
+               ================================================ */
             customCSS: `
-                /* Iconos y avatar */
-                .flowise-launcher img,
+
+                /* Evitar que el botón limite el tamaño del icono */
+                .flowise-launcher {
+                    overflow: visible !important;
+                }
+
+                /* Deshacer padding, bordes y estilos heredados */
+                .flowise-launcher * {
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    background: transparent !important;
+                    border: none !important;
+                    box-shadow: none !important;
+                }
+
+                /* Imagen REAL del botón flotante 
+                   Basado en el HTML real que enviaste:
+                   <img alt="Bubble button icon" style="width:39px;height:39px;"> 
+                */
+                .flowise-launcher img[alt="Bubble button icon"] {
+                    width: 100% !important;
+                    height: 100% !important;
+                    max-width: none !important;
+                    max-height: none !important;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    border: none !important;
+                    background: transparent !important;
+
+                    /* Ignorar estilos inline de Flowise */
+                    inline-size: auto !important;
+                    block-size: auto !important;
+
+                    /* Tamaño aumentado del icono */
+                    transform: scale(1.25) !important;
+                    transform-origin: center !important;
+
+                    /* Ajuste visual */
+                    object-fit: contain !important;
+                    object-position: center center !important;
+                }
+
+                /* Ajustar tooltip para que no empuje el botón */
+                .flowise-tooltip {
+                    transform: translateY(-10px) !important;
+                }
+
+                /* ---- ESTILOS DEL CHAT ---- */
+
                 .flowise-chatbot-header img,
                 .flowise-bot-avatar img,
                 .flowise-avatar img {
@@ -64,7 +114,6 @@
                     border: 1px solid #0A1F44 !important;
                 }
 
-                /* Ventana del chat */
                 .flowise-chatbot-container,
                 .flowise-chat-window,
                 .flowise-chatbot {
@@ -72,7 +121,6 @@
                     border: 1px solid #0A1F44 !important;
                 }
 
-                /* Scrollbars estilo web */
                 ::-webkit-scrollbar {
                     width: 9px;
                 }
@@ -81,19 +129,16 @@
                     border-radius: 0px;
                 }
 
-                /* Header del chat */
                 .flowise-chatbot-header {
                     background-color: #800020 !important;
                     color: #FFFFFF !important;
                 }
 
-                /* Botón de enviar mensaje */
                 .flowise-send-button {
                     background-color: #800020 !important;
                     color: #FFFFFF !important;
                 }
 
-                /* Hover del botón enviar */
                 .flowise-send-button:hover {
                     background-color: #99002A !important;
                 }
@@ -104,7 +149,7 @@
                 showTitle: true,
                 showAgentMessages: true,
                 title: "Asistente SN WHITE HOSTING",
-                titleAvatarSrc: "https://www.snwhitehosting.com/wp-content/uploads/2025/08/SN-WHITE-HOSTING-LOGO-e1755733089560.png",
+                titleAvatarSrc: "https://cdn-icons-png.flaticon.com/128/18355/18355222.png",
                 welcomeMessage: "¡Hola! Soy el asistente oficial de SN WHITE HOSTING. ¿En qué puedo ayudarte hoy?",
                 errorMessage: "Ha ocurrido un error. Por favor, inténtalo nuevamente.",
                 backgroundColor: "#FFFFFF",
@@ -123,15 +168,13 @@
                 sourceDocsTitle: "Fuentes:",
                 renderHTML: true,
 
-                /* MENSAJES DEL BOT */
                 botMessage: {
                     backgroundColor: "#FFFFFF",
                     textColor: "#0A1F44",
                     showAvatar: true,
-                    avatarSrc: "https://cdn-icons-png.flaticon.com/128/2333/2333223.png"
+                    avatarSrc: "https://cdn-icons-png.flaticon.com/128/18355/18355222.png"
                 },
 
-                /* MENSAJES DEL USUARIO */
                 userMessage: {
                     backgroundColor: "#800020",
                     textColor: "#FFFFFF",
@@ -139,7 +182,6 @@
                     avatarSrc: "https://cdn-icons-png.flaticon.com/128/3177/3177440.png"
                 },
 
-                /* INPUT */
                 textInput: {
                     placeholder: "Escribe tu mensaje...",
                     backgroundColor: "#FFFFFF",
@@ -161,7 +203,6 @@
                     time: true
                 },
 
-                /* FOOTER LEGAL */
                 footer: {
                     textColor: "#0A1F44",
                     text: "By",
