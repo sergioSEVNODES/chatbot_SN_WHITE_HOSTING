@@ -1,0 +1,174 @@
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+
+    Chatbot.init({
+        chatflowid: "2fde307e-7613-4b3d-b791-abb0ebdcf8e6",
+        apiHost: "https://ai.sevnodes.es",
+        chatflowConfig: {},
+        observersConfig: {},
+
+        theme: {
+            /* BOTÓN FLOTANTE */
+            button: {
+                backgroundColor: "#800020", 
+                right: 24,
+                bottom: 24,
+                size: 60,
+                dragAndDrop: true,
+                iconColor: "#FFFFFF",
+                customIconSrc: "https://www.snwhitehosting.com/wp-content/uploads/2025/08/SN-WHITE-HOSTING-LOGO-e1755733089560.png",
+                autoWindowOpen: {
+                    autoOpen: true,
+                    openDelay: 2,
+                    autoOpenOnMobile: false
+                }
+            },
+
+            /* TOOLTIP */
+            tooltip: {
+                showTooltip: true,
+                tooltipMessage: "¿Necesitas ayuda? 👋",
+                tooltipBackgroundColor: "#0A1F44",
+                tooltipTextColor: "#FFFFFF",
+                tooltipFontSize: 15
+            },
+
+            /* DISCLAIMER LEGAL */
+            disclaimer: {
+                title: "Aviso Legal",
+                message: `
+                    Al utilizar este asistente aceptas nuestras 
+                    <a target="_blank" href="https://www.snwhitehosting.com/es/terms/">Condiciones de Uso</a>, 
+                    <a target="_blank" href="https://www.snwhitehosting.com/es/privacy-policy/">Política de Privacidad</a> 
+                    y 
+                    <a target="_blank" href="https://www.snwhitehosting.com/es/cookies/">Política de Cookies</a>.
+                `,
+                textColor: "#0A1F44",
+                buttonColor: "#800020",
+                buttonText: "Aceptar y continuar",
+                buttonTextColor: "#FFFFFF",
+                blurredBackgroundColor: "rgba(0,0,0,0.55)",
+                backgroundColor: "#FFFFFF"
+            },
+
+            /* CSS PERSONALIZADO */
+            customCSS: `
+                /* Iconos y avatar */
+                .flowise-launcher img,
+                .flowise-chatbot-header img,
+                .flowise-bot-avatar img,
+                .flowise-avatar img {
+                    border-radius: 0 !important;
+                    background: #FFFFFF !important;
+                    padding: 5px !important;
+                    border: 1px solid #0A1F44 !important;
+                }
+
+                /* Ventana del chat */
+                .flowise-chatbot-container,
+                .flowise-chat-window,
+                .flowise-chatbot {
+                    border-radius: 0 !important;
+                    border: 1px solid #0A1F44 !important;
+                }
+
+                /* Scrollbars estilo web */
+                ::-webkit-scrollbar {
+                    width: 9px;
+                }
+                ::-webkit-scrollbar-thumb {
+                    background-color: #0A1F44;
+                    border-radius: 0px;
+                }
+
+                /* Header del chat */
+                .flowise-chatbot-header {
+                    background-color: #800020 !important;
+                    color: #FFFFFF !important;
+                }
+
+                /* Botón de enviar mensaje */
+                .flowise-send-button {
+                    background-color: #800020 !important;
+                    color: #FFFFFF !important;
+                }
+
+                /* Hover del botón enviar */
+                .flowise-send-button:hover {
+                    background-color: #99002A !important;
+                }
+            `,
+
+            /* CHAT WINDOW */
+            chatWindow: {
+                showTitle: true,
+                showAgentMessages: true,
+                title: "Asistente SN WHITE HOSTING",
+                titleAvatarSrc: "https://www.snwhitehosting.com/wp-content/uploads/2025/08/SN-WHITE-HOSTING-LOGO-e1755733089560.png",
+                welcomeMessage: "¡Hola! Soy el asistente oficial de SN WHITE HOSTING. ¿En qué puedo ayudarte hoy?",
+                errorMessage: "Ha ocurrido un error. Por favor, inténtalo nuevamente.",
+                backgroundColor: "#FFFFFF",
+                height: 720,
+                width: 430,
+                fontSize: 16,
+
+                starterPrompts: [
+                    "¿Qué planes de hosting ofrecéis?",
+                    "¿Cómo puedo registrar un dominio?",
+                    "¿Tenéis soporte técnico 24/7?",
+                    "Necesito un plan para empresas",
+                ],
+                starterPromptFontSize: 15,
+                clearChatOnReload: false,
+                sourceDocsTitle: "Fuentes:",
+                renderHTML: true,
+
+                /* MENSAJES DEL BOT */
+                botMessage: {
+                    backgroundColor: "#FFFFFF",
+                    textColor: "#0A1F44",
+                    showAvatar: true,
+                    avatarSrc: "https://cdn-icons-png.flaticon.com/128/2333/2333223.png"
+                },
+
+                /* MENSAJES DEL USUARIO */
+                userMessage: {
+                    backgroundColor: "#800020",
+                    textColor: "#FFFFFF",
+                    showAvatar: true,
+                    avatarSrc: "https://cdn-icons-png.flaticon.com/128/3177/3177440.png"
+                },
+
+                /* INPUT */
+                textInput: {
+                    placeholder: "Escribe tu mensaje...",
+                    backgroundColor: "#FFFFFF",
+                    textColor: "#0A1F44",
+                    sendButtonColor: "#800020",
+                    maxChars: 400,
+                    maxCharsWarningMessage: "Has superado el límite de 400 caracteres.",
+                    autoFocus: true,
+                    sendMessageSound: false,
+                    receiveMessageSound: false
+                },
+
+                feedback: {
+                    color: "#0A1F44"
+                },
+
+                dateTimeToggle: {
+                    date: true,
+                    time: true
+                },
+
+                /* FOOTER LEGAL */
+                footer: {
+                    textColor: "#0A1F44",
+                    text: "By",
+                    company: "SN WHITE HOSTING",
+                    companyLink: "https://www.snwhitehosting.com/"
+                }
+            }
+        }
+    })
+</script>
